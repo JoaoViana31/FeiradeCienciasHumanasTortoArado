@@ -30,7 +30,7 @@ body {
     max-width:1100px;
     margin:36px auto;
     padding:24px;
-  }
+}
 
 .header {
     display:flex;
@@ -38,10 +38,13 @@ body {
     justify-content:space-between;
     gap:16px;
     margin-bottom:20px;
+    flex-wrap: wrap;
 }
 
 .brand {
-    display:flex;gap:12px;align-items:center;
+    display:flex;
+    gap:12px;
+    align-items:center;
 }
 
 .logo {
@@ -60,13 +63,14 @@ body {
 
 .site-title { 
     font-size:18px;
-    font-weight:700
-  }
+    font-weight:700;
+}
 
 .nav {
     display:flex;
     gap:12px;
     align-items:center;
+    flex-wrap: wrap;
 }
 
 .nav a{
@@ -204,14 +208,14 @@ body {
     border-radius:12px;
     background:linear-gradient(180deg,#fff,#fbfbfb);
     border:1px solid rgba(0,0,0,0.03);
-    margin-bottom:12px
+    margin-bottom:12px;
 }
 
 .box-item .thumb {
     width:36%;
     min-width:150px;
     border-radius:22px;
-    overflow:hidden
+    overflow:hidden;
 }
 
 .box-item .thumb img {
@@ -221,7 +225,7 @@ body {
 }
 
 .box-item .meta {
-    flex:1
+    flex:1;
 }
 
 /* Sobre o livro - cards grid */
@@ -237,7 +241,7 @@ body {
     background:linear-gradient(180deg,#fff,#fffefc);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-left: 6px solid var(--terracotta);
-  }
+}
 
 /* footer */
 .footer {
@@ -249,6 +253,7 @@ body {
     justify-content:space-between;
     align-items:center;
     gap:12px;
+    flex-wrap: wrap;
 }
 
 .copy {
@@ -256,7 +261,7 @@ body {
     color:var(--muted);
 }
 
-/* responsive */
+/* existing responsive adjustments */
 @media(max-width:900px){
   .hero{flex-direction:column}
   .hero-right{width:100%}
@@ -265,12 +270,33 @@ body {
   .box-item .thumb,.person .img{width:100%}
 }
 
+/* additional responsiveness for mobile (≤600px) */
+@media(max-width:600px){
+  .container{padding:16px;margin:16px auto}
+  .header{flex-direction:column;align-items:flex-start}
+  .nav{flex-direction:column;align-items:flex-start;width:100%}
+  .nav a{width:100%;text-align:center;padding:10px 0}
+  .title-big{font-size:22px;text-align:center}
+  .lead{text-align:center}
+  .img-row{flex-direction:column}
+  .row{flex-direction:column}
+  .footer{flex-direction:column;text-align:center}
+  .box-item,.person{flex-direction:column}
+  .logo{width:48px;height:48px;font-size:16px}
+  .hero{padding:18px}
+  .hero-right{width:100%}
+  .info-card{padding:12px}
+  .site-title{text-align:center;width:100%}
+  .brand{justify-content:center;width:100%}
+}
+
+/* logo image */
 .logo img {
-    height: 60px;           /* controla a altura da logo */
-    width: auto;            /* mantém a proporção correta */
-    object-fit: contain;    /* garante que não distorça */
-    margin-right: 0px;     /* espaçamento entre logo e texto */
-    vertical-align: middle; /* alinha verticalmente */
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    margin-right: 0px;
+    vertical-align: middle;
     border-radius: 10px;
 }
 
